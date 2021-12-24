@@ -4,10 +4,11 @@ using namespace std;
 
 /*
 
-1.  *wymusza* wpisanie liczby ca³kowitej x zawartej w przedziale <A,B> gdzie A i B sta³e
-2.  drukuje (wyœwietla) wartoœæ x
-3.  wczytuje ci¹g liczb ca³kowitych a¿ do wczytania liczby parzystej  lub podzielnej (bez reszty) przez x
-4.  drukuje (wyœwietla) najwiêksz¹ liczbê ujemn¹ z tego ci¹gu ( nie bior¹c pod uwagê liczby koñcz¹cej) lub informacjê ¿e nie by³o liczb ujemnych
+1.  *wymusza* wpisanie liczby calkowitej x zawartej w przedziale <A,B> gdzie A i B stale czyli tu: -20, -19 ... 19, 20
+2.  drukuje (wyswietla) wartosc x
+3.  wczytuje ciag liczb calkowitych az do wczytania liczby parzystej  lub podzielnej (bez reszty) przez x
+4.  drukuje (wyswietla) najwieksza liczba ujemna z tego ciagu ( nie biorac pod uwage liczby konczacej ) lub informacje ze nie bylo liczb ujemnych
+    info: najwiÄ™ksza ujemna to -1.
 
 */
 
@@ -15,38 +16,35 @@ int main()
 {
     const int A=-20;
     const int B= 20;
-    int x=A-1;
-    int bigger=NULL;
+    int x;
+    int bigger=0;
     int input;
     string output;
 
     cout << " Podaj wartosc z przedzialu <" << A << " , " << B << ">";
 
-    while ( (x<A) || (x>B) ) {
-      cout << "\nwartosc z przedzialu poporsze : " << endl;
-      cin >> x;
-    }
+    do {
+        cout << "\nwartosc z przedzialu poporsze : (jeÅ›li podasz zero - dostaniesz wyjÄ…tek)\n" ;
+        cin >> x;
+    } while ( (x<A) || (x>B) );
 
-    cout << "\n\nWspaniale, wybrales liczbe : " << x << "\n\n";
-
-    cout << "Teraz poprosze o ciag wartosci.\n";
+    cout << "\n\nWspaniale, wybrales liczbe : " << x << "\n\nTeraz poprosze o ciag wartosci.\n";
 
     do {
-        // szukam przedostatniej wiekszej niz bigger a mniejszej niz 0
-        if ( (input<0) && ( (input>bigger) || ( bigger==NULL ) )  ) { bigger=input; }
+        if ( (input<0) && ( ( bigger==0 || input>bigger ))) {
+            bigger=input;
+        }
 
         cout << "\npoprosze nastepna: ";
         cin >> input;
-        cout << "\n wpisales: " << input;
     }
     while ( (input%2!=0) && (input%x!=0) );
 
-    //cout << "\nostatnia to:"  << input ;
-    cout << "\nnajwieksza to:"  << bigger ;
+    if ( bigger == 0 ) {
+        cout << "nie podales ujemnych wartosci, zegnam.";
+        return 0;
+    }
 
-    output = bigger < 0 ? "\najwieksza ujemna to:"+bigger : "nie podales ujemnych wartosci, zegnam.";
-
-    cout << output;
-
+    cout << "\nNajwieksza ujemna to:" << bigger;
     return 0;
 }
