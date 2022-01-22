@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1642548545 source:c:\temp\proj5\main.cpp
+	<iostream>
+	<fstream>
+
+1642623791 source:c:\_okno_\programowanie\proj_639b-etxxx-iep-prz\proj5\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<random>
+	<stdio.h>
+	<iomanip>
+	<string>
+	<regex>
+	<iterator>
+

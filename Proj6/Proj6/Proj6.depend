@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1642628427 source:c:\_okno_\programowanie\proj_639b-etxxx-iep-prz\proj6\proj6\main.cpp
+	<iostream>
+	<time.h>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+
